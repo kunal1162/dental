@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Dentalum — Multispeciality Dental Studio | Dr. Rohini Sharma | Jaipur</title>
+  <meta name="description" content="Dentalum Multispeciality Dental Studio by Dr. Rohini Sharma, BDS MIDA MPH. Premium painless dental care in Murlipura Scheme, Sikar Road, Jaipur. 5.0★ Google Rated." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --cream:#F5F0E8;--cream-light:#FAF7F2;--cream-mid:#EDE7DA;
+      --gold:#B8933F;--gold-light:#D4AD62;
+      --dark:#111111;--dark-2:#1C1C1C;--dark-3:#2A2A2A;
+      --muted:#6B6457;--border:#E0D8CC;
+      --fd:'Cormorant Garamond',Georgia,serif;
+      --fb:'Inter',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--cream-light);color:var(--dark);font-family:var(--fb);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+    ::selection{background:var(--gold);color:#fff}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;padding:0 40px;transition:transform .35s cubic-bezier(.16,1,.3,1),background .4s,backdrop-filter .4s;background:rgba(17,17,17,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,147,63,0.2);will-change:transform}
+    nav.nav-hidden{transform:translateY(-100%)}
+    .nav-inner{max-width:1200px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{text-decoration:none;display:flex;flex-direction:column;gap:2px}
+    .logo-name{font-family:var(--fd);font-size:24px;font-weight:600;letter-spacing:.07em;color:#fff;line-height:1}
+    .logo-sub{font-size:8px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);display:flex;align-items:center;gap:6px}
+    .logo-sub::before,.logo-sub::after{content:'';display:block;width:14px;height:1px;background:var(--gold-light);opacity:.7}
+    .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+    .nav-links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--gold-light)}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--gold);color:#fff;font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background .2s,transform .15s}
+    .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+
+    /* MOBILE NAV */
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:99;background:rgba(17,17,17,.97);flex-direction:column;align-items:center;justify-content:center;gap:32px}
+    .mobile-nav.open{display:flex}
+    .mobile-nav a{font-family:var(--fd);font-size:34px;font-weight:500;color:#fff;text-decoration:none;letter-spacing:.04em;transition:color .2s}
+    .mobile-nav a:hover{color:var(--gold-light)}
+    .mn-close{position:absolute;top:28px;right:36px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+
+    /* UTILITIES */
+    .flex{display:flex}
+    .flex-col{flex-direction:column}
+    .justify-center{justify-content:center}
+    .relative{position:relative}
+    .isolate{isolation:isolate}
+    .min-h-screen{min-height:100vh}
+    .mt-24{margin-top:6rem}
+    @media(min-width:768px){
+      .md\:mt-32{margin-top:8rem}
+    }
+
+    /* HERO */
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-bottom:60px}
+    .hero-bg{position:absolute;inset:0;background-image:url('images/hero_bg.jpg');background-size:cover;background-position:20% 40%;transform-origin:center;animation:heroZoom 14s ease-out forwards}
+    @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+    .hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,.9) 0%,rgba(10,8,6,.55) 40%,rgba(10,8,6,.1) 80%,transparent 100%)}
+    .hero-ovl{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,6,.72) 0%,transparent 55%)}
+    .hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 40px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-light);animation:pulse 2.5s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+    .eyebrow-text{font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light)}
+    .hero-title{font-family:var(--fd);font-size:clamp(42px,6vw,84px);font-weight:500;line-height:1.07;color:#fff;letter-spacing:-.01em;max-width:740px;margin-bottom:24px}
+    .hero-title em{font-style:italic;color:var(--gold-light)}
+    .hero-sub{font-size:15px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.7);max-width:480px;margin-bottom:40px}
+    .hero-sub strong{color:rgba(255,255,255,.95);font-weight:500}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:var(--gold);color:#fff;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:4px;border:1px solid var(--gold);transition:all .2s}
+    .btn-primary:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 30px rgba(184,147,63,.35)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:transparent;color:#fff;font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:4px;border:1px solid rgba(255,255,255,.35);transition:all .2s}
+    .btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
+    .hero-stats{display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+    .stat-val{font-family:var(--fd);font-size:32px;font-weight:600;color:#fff;line-height:1}
+    .stat-lbl{font-size:10px;font-weight:400;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-top:5px;text-transform:uppercase}
+
+    /* TRUST BAR */
+    .trust-bar{background:var(--dark);border-bottom:1px solid rgba(184,147,63,.2);padding:0 40px}
+    .trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+    .trust-item{display:flex;align-items:center;gap:16px;padding:28px 0;border-right:1px solid rgba(255,255,255,.08)}
+    .trust-item:not(:first-child){padding-left:40px}
+    .trust-item:last-child{border-right:none}
+    .t-icon{width:42px;height:42px;border-radius:8px;background:rgba(184,147,63,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+    .t-title{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff;line-height:1.2}
+    .t-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px;line-height:1.5}
+
+    /* SECTIONS */
+    section{padding:100px 40px}
+    .container{max-width:1200px;margin:0 auto}
+    .sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .sec-tag::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+    .sec-title{font-family:var(--fd);font-size:clamp(34px,4vw,54px);font-weight:500;line-height:1.12;color:var(--dark);letter-spacing:-.01em}
+    .sec-title em{font-style:italic;color:var(--gold)}
+    .sec-body{font-size:15px;font-weight:300;line-height:1.8;color:var(--muted);max-width:560px}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .about-img-wrap{position:relative}
+    .about-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:4px;display:block}
+    .img-badge{position:absolute;bottom:-20px;left:-20px;background:var(--dark);border:1px solid rgba(184,147,63,.35);border-radius:4px;padding:18px 22px}
+    .badge-name{font-family:var(--fd);font-size:17px;font-weight:500;color:#fff}
+    .badge-cred{font-size:10px;font-weight:500;letter-spacing:.14em;color:var(--gold-light);text-transform:uppercase;margin-top:3px}
+    .about-body{padding-bottom:40px}
+    .about-body p{font-size:15px;font-weight:300;line-height:1.85;color:var(--muted);margin-top:16px}
+    .about-body p strong{color:var(--dark);font-weight:500}
+    .about-quote{margin-top:32px;padding:24px 28px;border-left:3px solid var(--gold);background:var(--cream-mid);border-radius:0 4px 4px 0}
+    .about-quote p{font-family:var(--fd);font-size:18px;font-style:italic;color:var(--dark);line-height:1.6;margin:0}
+    .about-quote cite{display:block;margin-top:10px;font-family:var(--fb);font-size:10px;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;font-size:11px;font-weight:500;color:var(--dark-3);background:#fff}
+    .pill-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+    /* SERVICES */
+    .services-section{background:var(--dark)}
+    .srv-header{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+    .srv-header .sec-tag{color:var(--gold-light)}.srv-header .sec-tag::before{background:var(--gold-light)}
+    .srv-header .sec-title{color:#fff}
+    .srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+    .srv-card{background:var(--dark-2);padding:42px 40px;border:1px solid rgba(255,255,255,.05);transition:background .25s,border-color .25s;cursor:pointer;position:relative;overflow:hidden}
+    .srv-card::after{content:'';position:absolute;left:0;top:0;width:3px;height:0;background:var(--gold);transition:height .3s ease}
+    .srv-card:hover{background:var(--dark-3);border-color:rgba(184,147,63,.2)}
+    .srv-card:hover::after{height:100%}
+    .srv-num{font-family:var(--fd);font-size:13px;font-weight:400;color:var(--gold);letter-spacing:.1em;margin-bottom:20px}
+    .srv-name{font-family:var(--fd);font-size:24px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:12px}
+    .srv-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:24px}
+    .srv-feats{display:flex;flex-direction:column;gap:8px}
+    .srv-feat{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:400;color:rgba(255,255,255,.55)}
+    .srv-feat::before{content:'';display:block;width:16px;height:1px;background:var(--gold);flex-shrink:0}
+    .srv-arrow{position:absolute;bottom:32px;right:32px;width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:16px;transition:all .2s}
+    .srv-card:hover .srv-arrow{border-color:var(--gold);color:var(--gold)}
+
+    /* REVIEWS */
+    .rev-section{background:var(--cream-light)}
+    .rev-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;flex-wrap:wrap;gap:24px}
+    .g-badge{display:flex;align-items:center;gap:12px;padding:14px 20px;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+    .g-score{font-family:var(--fd);font-size:28px;font-weight:500;color:var(--dark);line-height:1}
+    .g-stars{color:#F59E0B;font-size:13px;margin-top:3px}
+    .g-sub{font-size:10px;color:var(--muted)}
+    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .rev-card{background:#fff;border:1px solid var(--border);border-radius:4px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;transition:box-shadow .25s,transform .25s}
+    .rev-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+    .rev-stars{color:#F59E0B;font-size:13px;margin-bottom:18px}
+    .rev-text{font-family:var(--fd);font-size:17px;font-style:italic;color:var(--dark);line-height:1.55;margin-bottom:16px}
+    .rev-more{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:24px}
+    .rev-author{display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border)}
+    .rev-av{width:38px;height:38px;border-radius:50%;background:var(--dark);color:var(--gold-light);font-family:var(--fd);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .rev-name{font-size:13px;font-weight:600;color:var(--dark)}
+    .rev-meta{font-size:11px;color:var(--muted);margin-top:1px}
+    .v-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;letter-spacing:.06em;color:#059669;background:#ECFDF5;border:1px solid #A7F3D0;padding:3px 8px;border-radius:999px}
+
+    /* BOOKING */
+    .book-section{background:var(--cream-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .book-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+    .book-info{padding-top:8px}
+    .contact-cards{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+    .cc{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--border);border-radius:4px}
+    .cc-icon{width:38px;height:38px;background:var(--dark);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);flex-shrink:0}
+    .cc-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .cc-val{font-size:14px;font-weight:500;color:var(--dark);margin-top:2px}
+    .cc-note{font-size:11px;color:var(--gold);font-weight:500;margin-top:2px}
+    .book-ctas{display:flex;gap:10px;margin-top:12px}
+    .btn-wa-sm{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:13px;background:#25D366;color:#fff;font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background .2s}
+    .btn-wa-sm:hover{background:#22C55E}
+    .form-wrap{background:#fff;border:1px solid var(--border);border-radius:4px;padding:40px;box-shadow:0 8px 40px rgba(0,0,0,.05)}
+    .form-title{font-family:var(--fd);font-size:26px;font-weight:500;color:var(--dark);margin-bottom:6px}
+    .form-sub{font-size:12px;color:var(--muted);margin-bottom:28px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+    label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    input,select,textarea{width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:4px;background:var(--cream-light);font-family:var(--fb);font-size:14px;color:var(--dark);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,147,63,.1)}
+    input::placeholder,textarea::placeholder{color:#B0A898}
+    textarea{resize:none}
+    .time-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .ts input[type=radio]{display:none}
+    .ts label{display:flex;flex-direction:column;align-items:center;padding:12px 8px;border:1px solid var(--border);border-radius:4px;background:var(--cream-light);cursor:pointer;transition:all .2s;text-transform:none;letter-spacing:0}
+    .ts label .tsn{font-size:12px;font-weight:600;color:var(--dark)}
+    .ts label .tsr{font-size:10px;font-weight:400;color:var(--muted);margin-top:2px}
+    .ts input:checked+label{background:var(--dark);border-color:var(--dark)}
+    .ts input:checked+label .tsn,.ts input:checked+label .tsr{color:#fff}
+    .btn-submit{width:100%;padding:16px;background:var(--dark);color:#fff;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s;margin-top:24px}
+    .btn-submit:hover{background:var(--dark-3)}
+    .btn-submit:disabled{opacity:.7;cursor:not-allowed}
+    .form-note{text-align:center;font-size:11px;color:var(--muted);margin-top:12px}
+    .spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* FOOTER */
+    footer{background:var(--dark);padding:70px 40px;border-top:1px solid rgba(255,255,255,.06)}
+    .foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .foot-logo{font-family:var(--fd);font-size:26px;font-weight:500;color:#fff;letter-spacing:.06em}
+    .foot-tag{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+    .foot-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;margin-top:16px;max-width:300px}
+    .foot-col-title{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .foot-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .foot-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+    .foot-links a:hover{color:#fff}
+    .foot-addr{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.85}
+    .foot-phone{display:block;font-family:var(--fd);font-size:22px;font-weight:500;color:#fff;text-decoration:none;margin-top:16px;transition:color .2s}
+    .foot-phone:hover{color:var(--gold-light)}
+    .foot-hours{font-size:11px;color:var(--gold-light);margin-top:8px;display:flex;align-items:center;gap:7px}
+    .foot-hours::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#10B981;flex-shrink:0}
+    .foot-bottom{max-width:1200px;margin:32px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .foot-copy{font-size:12px;color:rgba(255,255,255,.25)}
+
+    /* MOBILE BAR */
+    .mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;background:rgba(17,17,17,.96);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.08);padding:12px 16px;gap:10px}
+    .mob-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 10px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+    .mob-call{border:1px solid rgba(255,255,255,.15);color:#fff}
+    .mob-book{background:var(--gold);color:#fff}
+
+    /* MODAL */
+    .modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(8,6,4,.82);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+    .modal-ov.open{display:flex}
+    .modal-box{background:#fff;border-radius:6px;padding:40px;width:100%;max-width:480px;position:relative;animation:mIn .25s ease}
+    @keyframes mIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+    .modal-cls{position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;transition:color .2s}
+    .modal-cls:hover{color:var(--dark)}
+    .modal-check{width:56px;height:56px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+    .modal-title{font-family:var(--fd);font-size:28px;font-weight:500;color:var(--dark);margin-bottom:8px}
+    .modal-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7}
+    .modal-details{background:var(--cream-light);border:1px solid var(--border);border-radius:4px;padding:16px 20px;margin-bottom:8px}
+    .md-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+    .md-row:last-child{border-bottom:none}
+    .md-lbl{color:var(--muted)}
+    .md-val{font-weight:500;color:var(--dark)}
+    .md-ref{font-weight:700;color:var(--gold);font-family:monospace}
+    .modal-acts{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+    .btn-wa-full{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;background:#25D366;color:#fff;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background .2s}
+    .btn-wa-full:hover{background:#22C55E}
+    .btn-done{display:flex;align-items:center;justify-content:center;padding:14px;background:var(--dark);color:#fff;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:background .2s}
+    .btn-done:hover{background:var(--dark-3)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:0 20px}
+      .nav-links,.nav-cta{display:none}
+      .nav-hamburger{display:flex}
+      section{padding:72px 20px}
+      .hero-content{padding:0 20px 40px}
+      .trust-bar{padding:0 20px}
+      .trust-inner{grid-template-columns:1fr}
+      .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:22px 0}
+      .trust-item:not(:first-child){padding-left:0}
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .img-badge{left:0;bottom:0;position:relative;margin-top:16px}
+      .srv-grid{grid-template-columns:1fr}
+      .rev-grid{grid-template-columns:1fr}
+      .book-grid{grid-template-columns:1fr;gap:40px}
+      .form-row{grid-template-columns:1fr}
+      .foot-inner{grid-template-columns:1fr;gap:36px}
+      footer{padding:56px 20px 90px}
+      .foot-bottom{flex-direction:column;align-items:flex-start}
+      .mob-bar{display:flex}
+    }
+    @media(max-width:480px){
+      .hero-title{font-size:38px}
+      .hero-stats{gap:24px;flex-wrap:wrap}
+      .stat-val{font-size:26px}
+      .form-wrap{padding:24px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-name">Dentalum</span>
+      <span class="logo-sub">Multispeciality Dental Studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Treatments</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#booking">Contact</a></li>
+    </ul>
+    <a href="#booking" class="nav-cta">
+      Book Consultation
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mn-close" id="mnClose">&#10005;</button>
+  <a href="#about" class="mn-link">About</a>
+  <a href="#services" class="mn-link">Treatments</a>
+  <a href="#reviews" class="mn-link">Reviews</a>
+  <a href="#booking" class="mn-link" style="color:var(--gold-light)">Book Consultation &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero relative isolate min-h-screen flex flex-col justify-center" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-ovl"></div>
+  <div class="hero-content relative isolate mt-24 md:mt-32">
+    <h1 class="hero-title">
+      Where Science Meets<br>
+      <em>Compassion</em> for<br>
+      Your Perfect Smile.
+    </h1>
+    <p class="hero-sub">
+      Led by <strong>Dr. Rohini Sharma</strong> (BDS, MIDA, MPH), Dentalum is Jaipur&rsquo;s most thoughtfully designed dental studio &mdash; calm, painless &amp; uncompromisingly hygienic.
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">
+        Book Appointment
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:09462649150" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call 094626 49150
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">5.0<span style="font-size:20px;color:var(--gold-light)">&#9733;</span></div>
+        <div class="stat-lbl">Google Rating</div>
+      </div>
+      <div>
+        <div class="stat-val">14+</div>
+        <div class="stat-lbl">Verified Reviews</div>
+      </div>
+      <div>
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">Pain-Free Promise</div>
+      </div>
+      <div>
+        <div class="stat-val">E-437</div>
+        <div class="stat-lbl">Sikar Rd, Murlipura</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="t-icon">&#11088;</div>
+      <div>
+        <div class="t-title">5.0 / 5.0 Google Rating</div>
+        <div class="t-sub">14+ verified patient reviews &middot; 100% positive feedback</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="t-icon">&#129658;</div>
+      <div>
+        <div class="t-title">Dr. Rohini Sharma</div>
+        <div class="t-sub">BDS, MIDA, MPH &mdash; Member, Indian Dental Association</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="t-icon">&#10022;</div>
+      <div>
+        <div class="t-title">Advanced &amp; Painless</div>
+        <div class="t-sub">Rotary endodontics, digital RVG, Class-B sterilization</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--cream-light)">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img class="about-img" src="images/doctor_portrait.jpg" alt="Dr. Rohini Sharma BDS MIDA MPH Dentalum Jaipur" />
+        <div class="img-badge">
+          <div class="badge-name">Dr. Rohini Sharma</div>
+          <div class="badge-cred">BDS &middot; MIDA &middot; MPH</div>
+        </div>
+      </div>
+      <div class="about-body">
+        <span class="sec-tag">The Doctor</span>
+        <h2 class="sec-title">Ethical, Precise,<br>and <em>Genuinely Caring</em></h2>
+        <p>Dr. Rohini Sharma brings a rare combination of <strong>advanced clinical surgery</strong> and <strong>public health science</strong> to every consultation. With her MPH training, she applies international infection-control protocols that most private clinics simply do not offer.</p>
+        <p>At Dentalum, no treatment is ever recommended unnecessarily. Every diagnosis is shown to you on a high-definition intraoral monitor &mdash; <strong>you see and understand every step before we proceed.</strong></p>
+        <div class="about-quote">
+          <p>&ldquo;Your dental visit should feel like a calm retreat, not something you dread.&rdquo;</p>
+          <cite>&mdash; Dr. Rohini Sharma, BDS &middot; MIDA &middot; MPH</cite>
+        </div>
+        <div class="pills">
+          <span class="pill"><span class="pill-dot"></span>Painless Anesthesia</span>
+          <span class="pill"><span class="pill-dot"></span>Class-B Autoclave</span>
+          <span class="pill"><span class="pill-dot"></span>Digital Intraoral X-Ray</span>
+          <span class="pill"><span class="pill-dot"></span>MIDA Certified</span>
+          <span class="pill"><span class="pill-dot"></span>Transparent Diagnostics</span>
+          <span class="pill"><span class="pill-dot"></span>No Unnecessary Treatments</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="srv-header">
+      <div>
+        <span class="sec-tag">Treatments</span>
+        <h2 class="sec-title">Specialized Care.<br><em>Zero Compromise.</em></h2>
+      </div>
+      <p class="sec-body" style="color:rgba(255,255,255,.45);max-width:340px;font-size:13px">Every treatment delivered with hospital-grade sterilization, rotary precision instruments, and zero-pain anesthesia.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card">
+        <div class="srv-num">01</div>
+        <div class="srv-name">Advanced Orthodontics<br>&amp; Braces</div>
+        <div class="srv-desc">Discreet invisible aligners, ceramic self-ligating brackets, and bite correction for all ages.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Clear Invisible Aligners</span>
+          <span class="srv-feat">Ceramic &amp; Metal Braces</span>
+          <span class="srv-feat">Gap &amp; Bite Correction</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-num">02</div>
+        <div class="srv-name">Pain-Free<br>Root Canal (RCT)</div>
+        <div class="srv-desc">Single-sitting rotary endodontics with computerized apex locators &mdash; save your tooth without pain.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Single-Sitting Available</span>
+          <span class="srv-feat">Rotary NiTi Files</span>
+          <span class="srv-feat">Zirconia Crown Finish</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-num">03</div>
+        <div class="srv-name">Smile Designing<br>&amp; Aesthetics</div>
+        <div class="srv-desc">Ultra-thin porcelain veneers, in-office laser whitening, and composite bonding tailored to your face.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Porcelain Veneers</span>
+          <span class="srv-feat">1-Hour Whitening</span>
+          <span class="srv-feat">Gummy Smile Correction</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-num">04</div>
+        <div class="srv-name">Implants, Bridges<br>&amp; Dentures</div>
+        <div class="srv-desc">Biocompatible titanium implants and metal-free CAD/CAM ceramic bridges for permanent restoration.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Titanium Implants</span>
+          <span class="srv-feat">Metal-Free Ceramic Bridges</span>
+          <span class="srv-feat">Precision Dentures</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-num">05</div>
+        <div class="srv-name">Painless Extractions<br>&amp; Wisdom Teeth</div>
+        <div class="srv-desc">Atraumatic surgical techniques for impacted wisdom molars with rapid healing and minimal discomfort.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Impacted Wisdom Surgery</span>
+          <span class="srv-feat">Atraumatic Technique</span>
+          <span class="srv-feat">Fast Recovery Protocol</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-num">06</div>
+        <div class="srv-name">Preventive &amp;<br>Family Dentistry</div>
+        <div class="srv-desc">Gentle ultrasonic scaling, pediatric decay sealants, fluoride therapy and gum disease treatment for all.</div>
+        <div class="srv-feats">
+          <span class="srv-feat">Ultrasonic Scaling &amp; Polish</span>
+          <span class="srv-feat">Pediatric Fissure Sealants</span>
+          <span class="srv-feat">Gum Disease Care</span>
+        </div>
+        <span class="srv-arrow">&rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="rev-section" id="reviews">
+  <div class="container">
+    <div class="rev-header">
+      <div>
+        <span class="sec-tag">Patient Stories</span>
+        <h2 class="sec-title">100% 5-Star Rated<br>in <em>Murlipura</em></h2>
+      </div>
+      <div class="g-badge">
+        <img src="https://www.gstatic.com/images/branding/product/2x/googleg_48dp.png" width="32" height="32" alt="Google" />
+        <div>
+          <div class="g-score">5.0</div>
+          <div class="g-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="g-sub">14+ Verified Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div>
+          <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="rev-text">&ldquo;Warm staff, clean setup, and top-quality treatment by Dr. Rohini Sharma &#127775;&rdquo;</div>
+          <div class="rev-more">The clinic feels like a private wellness studio. Dr. Rohini took time to explain everything and I felt zero pain. Truly 5-star.</div>
+        </div>
+        <div class="rev-author">
+          <div class="rev-av">AS</div>
+          <div>
+            <div class="rev-name">Amit Sharma</div>
+            <div class="rev-meta">Murlipura &nbsp;&middot;&nbsp; <span class="v-badge">&#10003; Google Verified</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div>
+          <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="rev-text">&ldquo;Got my braces here &mdash; very professional work and hygienic environment.&rdquo;</div>
+          <div class="rev-more">Best orthodontic clinic on Sikar Road. Equipment is clearly high-end and everything was spotlessly clean. Highly recommend.</div>
+        </div>
+        <div class="rev-author">
+          <div class="rev-av">PK</div>
+          <div>
+            <div class="rev-name">Priya Kanwar</div>
+            <div class="rev-meta">Jaipur &nbsp;&middot;&nbsp; <span class="v-badge">&#10003; Google Verified</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div>
+          <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="rev-text">&ldquo;A very well maintained dental clinic. Gives only calm vibes.&rdquo;</div>
+          <div class="rev-more">Unlike noisy hospitals, this place feels peaceful. Scaling was completely painless. The studio design itself eases your anxiety before you sit in the chair.</div>
+        </div>
+        <div class="rev-author">
+          <div class="rev-av">RV</div>
+          <div>
+            <div class="rev-name">Rahul Verma</div>
+            <div class="rev-meta">Sikar Road &nbsp;&middot;&nbsp; <span class="v-badge">&#10003; Google Verified</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book-section" id="booking">
+  <div class="container">
+    <div class="book-grid">
+      <div class="book-info">
+        <span class="sec-tag">Appointments</span>
+        <h2 class="sec-title">Reserve Your<br><em>Priority Slot</em></h2>
+        <p class="sec-body" style="margin-top:16px">No crowded waiting. Every session is one-on-one, includes digital intraoral scans, and starts exactly on time.</p>
+        <div class="contact-cards" id="contact">
+          <div class="cc">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="cc-lbl">Studio Hours</div>
+              <div class="cc-val">Mon &ndash; Sat &nbsp;&middot;&nbsp; 10:00 AM &ndash; 8:00 PM</div>
+              <div class="cc-note">&#129001; Open Today &middot; Closes 8 PM</div>
+            </div>
+          </div>
+          <div class="cc">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+            </div>
+            <div>
+              <div class="cc-lbl">Address</div>
+              <div class="cc-val">E-437, Sikar Rd, Bank Colony, Murlipura Scheme, Jaipur 302039</div>
+            </div>
+          </div>
+          <div class="cc">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <div class="cc-lbl">Direct Helpline</div>
+              <div class="cc-val"><a href="tel:09462649150" style="color:var(--dark);text-decoration:none">094626 49150</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="book-ctas">
+          <a href="https://maps.google.com/?q=E-437+Sikar+Rd+Murlipura+Scheme+Jaipur" target="_blank" rel="noopener" class="btn-primary" style="flex:1;justify-content:center;font-size:11px;padding:13px">Get Directions</a>
+          <a href="https://wa.me/919462649150?text=Hello+Dr.+Rohini,+I+want+to+book+a+consultation+at+Dentalum." target="_blank" rel="noopener" class="btn-wa-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.059-1.146-.086-.285-.093-.655-.234-1.157-.453-2.084-.914-3.442-3.077-3.546-3.215-.105-.14-1.026-1.365-1.026-2.603 0-1.238.648-1.848.88-2.095.232-.248.508-.31.677-.31.17 0 .339.002.488.01.159.007.373-.06.583.444.218.522.742 1.808.807 1.94.065.132.109.288.022.46-.087.172-.131.28-.261.432-.13.152-.274.34-.391.457-.13.13-.266.273-.114.534.152.261.676 1.114 1.455 1.808 1.002.894 1.847 1.17 2.108 1.3.261.13.413.109.565-.065.152-.174.652-.761.826-1.022.174-.261.348-.217.587-.13.239.087 1.522.717 1.783.848.261.13.435.195.499.304.065.109.065.631-.079 1.036z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="form-wrap">
+        <div class="form-title">Book Consultation</div>
+        <div class="form-sub">Dr. Rohini&rsquo;s team confirms within 15 minutes.</div>
+        <form id="bookingForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="fg">
+              <label for="fName">Full Name *</label>
+              <input type="text" id="fName" required placeholder="e.g. Vikram Singhal" />
+            </div>
+            <div class="fg">
+              <label for="fPhone">Phone *</label>
+              <input type="tel" id="fPhone" required placeholder="e.g. 98290 12345" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="fService">Treatment *</label>
+              <select id="fService" required>
+                <option value="" disabled selected>Select service&hellip;</option>
+                <option>Advanced Orthodontics &amp; Braces</option>
+                <option>Pain-Free Root Canal (RCT)</option>
+                <option>Smile Designing &amp; Aesthetics</option>
+                <option>Implants, Bridges &amp; Dentures</option>
+                <option>Painless Extraction</option>
+                <option>Preventive Cleaning &amp; Checkup</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="fDate">Preferred Date *</label>
+              <input type="date" id="fDate" required />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Preferred Time</label>
+            <div class="time-slots">
+              <div class="ts">
+                <input type="radio" name="slot" id="slotM" value="Morning (10 AM - 1 PM)" checked />
+                <label for="slotM"><span class="tsn">Morning</span><span class="tsr">10 AM &ndash; 1 PM</span></label>
+              </div>
+              <div class="ts">
+                <input type="radio" name="slot" id="slotA" value="Afternoon (1 PM - 4 PM)" />
+                <label for="slotA"><span class="tsn">Afternoon</span><span class="tsr">1 PM &ndash; 4 PM</span></label>
+              </div>
+              <div class="ts">
+                <input type="radio" name="slot" id="slotE" value="Evening (4 PM - 8 PM)" />
+                <label for="slotE"><span class="tsn">Evening</span><span class="tsr">4 PM &ndash; 8 PM</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="fg" style="margin-top:16px">
+            <label for="fNote">Notes (Optional)</label>
+            <textarea id="fNote" rows="2" placeholder="E.g. tooth sensitivity, asking about invisible braces cost&hellip;"></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnLbl">Confirm Appointment</span>
+            <div class="spinner" id="spinner"></div>
+          </button>
+          <p class="form-note">&#128274; Confidential. No advance payment needed.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">Dentalum</div>
+      <div class="foot-tag">Multispeciality Dental Studio</div>
+      <div class="foot-desc">Founded by Dr. Rohini Sharma (BDS, MIDA, MPH). Redefining dental surgery, orthodontics, and smile aesthetics in Murlipura, Jaipur.</div>
+      <div style="margin-top:20px;color:var(--gold-light);font-size:12px">&#9733; 5.0 Rated &middot; 14+ Verified Reviews</div>
+    </div>
+    <div>
+      <div class="foot-col-title">Treatments</div>
+      <ul class="foot-links">
+        <li><a href="#services">Orthodontics &amp; Braces</a></li>
+        <li><a href="#services">Pain-Free Root Canal</a></li>
+        <li><a href="#services">Smile Design &amp; Veneers</a></li>
+        <li><a href="#services">Implants &amp; Bridges</a></li>
+        <li><a href="#services">Extractions</a></li>
+        <li><a href="#services">Preventive Care</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-col-title">Visit The Studio</div>
+      <div class="foot-addr">E-437, Sikar Rd, Bank Colony<br>Murlipura Scheme<br>Jaipur, Rajasthan 302039</div>
+      <a href="tel:09462649150" class="foot-phone">094626 49150</a>
+      <div class="foot-hours">Mon &ndash; Sat &middot; 10:00 AM &ndash; 8:00 PM</div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="foot-copy">&copy; <span id="yr"></span> Dentalum. All rights reserved.</div>
+    <div class="foot-copy">Dr. Rohini Sharma &middot; BDS &middot; MIDA &middot; MPH &middot; Jaipur</div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mob-bar">
+  <a href="tel:09462649150" class="mob-call">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Call Studio
+  </a>
+  <a href="#booking" class="mob-book">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    Book Visit
+  </a>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-ov" id="modalOv">
+  <div class="modal-box">
+    <button class="modal-cls" onclick="closeModal()">&#10005;</button>
+    <div class="modal-check">&#10003;</div>
+    <div class="modal-title">Appointment Confirmed</div>
+    <p class="modal-sub">Thank you, <strong id="mName"></strong>. Your consultation request has been recorded with Dr. Rohini Sharma at Dentalum Studio.</p>
+    <div class="modal-details">
+      <div class="md-row"><span class="md-lbl">Reference</span><span class="md-ref" id="mRef"></span></div>
+      <div class="md-row"><span class="md-lbl">Treatment</span><span class="md-val" id="mSvc"></span></div>
+      <div class="md-row"><span class="md-lbl">Date</span><span class="md-val" id="mDate"></span></div>
+      <div class="md-row"><span class="md-lbl">Slot</span><span class="md-val" id="mSlot"></span></div>
+      <div class="md-row" style="border:none"><span class="md-lbl">Location</span><span class="md-val">Murlipura Scheme, Sikar Rd</span></div>
+    </div>
+    <div class="modal-acts">
+      <button class="btn-wa-full" id="waBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.059-1.146-.086-.285-.093-.655-.234-1.157-.453-2.084-.914-3.442-3.077-3.546-3.215-.105-.14-1.026-1.365-1.026-2.603 0-1.238.648-1.848.88-2.095.232-.248.508-.31.677-.31.17 0 .339.002.488.01.159.007.373-.06.583.444.218.522.742 1.808.807 1.94.065.132.109.288.022.46-.087.172-.131.28-.261.432-.13.152-.274.34-.391.457-.13.13-.266.273-.114.534.152.261.676 1.114 1.455 1.808 1.002.894 1.847 1.17 2.108 1.3.261.13.413.109.565-.065.152-.174.652-.761.826-1.022.174-.261.348-.217.587-.13.239.087 1.522.717 1.783.848.261.13.435.195.499.304.065.109.065.631-.079 1.036z"/></svg>
+        Send via WhatsApp
+      </button>
+      <button class="btn-done" onclick="closeModal()">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Smart Hide on Scroll Down / Show on Scroll Up nav
+  (function(){
+    const nav=document.getElementById('nav');
+    let lastY=window.pageYOffset||document.documentElement.scrollTop;
+    let ticking=false;
+
+    window.addEventListener('scroll',function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          const currentY=window.pageYOffset||document.documentElement.scrollTop;
+          if(currentY<=20){
+            nav.classList.remove('nav-hidden');
+          }else if(currentY>lastY&&currentY>72){
+            nav.classList.add('nav-hidden');
+          }else if(currentY<lastY){
+            nav.classList.remove('nav-hidden');
+          }
+          lastY=currentY<=0?0:currentY;
+          ticking=false;
+        });
+        ticking=true;
+      }
+    },{passive:true});
+  })();
+
+  // Mobile nav
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+  document.getElementById('mnClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+  document.querySelectorAll('.mn-link').forEach(a=>a.addEventListener('click',()=>{
+    document.getElementById('mobileNav').classList.remove('open');
+    document.getElementById('nav').classList.remove('nav-hidden');
+  }));
+
+  // Default date
+  window.addEventListener('DOMContentLoaded',()=>{
+    const d=new Date();d.setDate(d.getDate()+1);
+    const pad=n=>String(n).padStart(2,'0');
+    const v=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+    const el=document.getElementById('fDate');
+    el.min=v;el.value=v;
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  });
+
+  // Form submit
+  function handleSubmit(e){
+    e.preventDefault();
+    const btn=document.getElementById('submitBtn'),lbl=document.getElementById('btnLbl'),sp=document.getElementById('spinner');
+    const name=document.getElementById('fName').value.trim();
+    const phone=document.getElementById('fPhone').value.trim();
+    const svc=document.getElementById('fService').value;
+    const date=document.getElementById('fDate').value;
+    const slot=document.querySelector('input[name=slot]:checked').value;
+    const note=document.getElementById('fNote').value.trim();
+    lbl.textContent='Reserving Slot…';sp.style.display='block';btn.disabled=true;
+    setTimeout(()=>{
+      lbl.textContent='Confirm Appointment';sp.style.display='none';btn.disabled=false;
+      const ref='DLM-'+Math.floor(1000+Math.random()*9000);
+      document.getElementById('mName').textContent=name;
+      document.getElementById('mRef').textContent=ref;
+      document.getElementById('mSvc').textContent=svc;
+      document.getElementById('mDate').textContent=date;
+      document.getElementById('mSlot').textContent=slot;
+      const msg=`Hello Dr. Rohini, I'd like to confirm my appointment at Dentalum:\n\n- Ref: ${ref}\n- Name: ${name}\n- Phone: ${phone}\n- Treatment: ${svc}\n- Date: ${date}\n- Slot: ${slot}${note?'\n- Note: '+note:''}`;
+      document.getElementById('waBtn').onclick=()=>window.open(`https://wa.me/919462649150?text=${encodeURIComponent(msg)}`,'_blank');
+      document.getElementById('modalOv').classList.add('open');
+      document.getElementById('bookingForm').reset();
+      const d=new Date();d.setDate(d.getDate()+1);
+      const pad=n=>String(n).padStart(2,'0');
+      document.getElementById('fDate').value=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+    },700);
+  }
+  function closeModal(){document.getElementById('modalOv').classList.remove('open')}
+  document.getElementById('modalOv').addEventListener('click',e=>{if(e.target===document.getElementById('modalOv'))closeModal()});
+  window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
