@@ -56,15 +56,20 @@
     .mt-24{margin-top:6rem}
     .bg-cover{background-size:cover}
     .bg-center{background-position:center 40%}
-    .bg-\[center_left_30\%\]{background-position:30% 40%}
+    .bg-\[center_right_25\%\]{background-position:right 25% center;background-position:center right 25%}
+    .grid{display:grid}
+    .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .gap-3{gap:0.75rem}
     @media(min-width:768px){
       .md\:mt-32{margin-top:8rem}
       .md\:bg-center{background-position:center 40%}
+      .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .md\:gap-\[2px\]{gap:2px}
     }
 
     /* HERO */
     .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-bottom:60px}
-    .hero-bg{position:absolute;inset:0;background-image:url('images/hero_bg.jpg');background-size:cover;background-position:30% 40%;transform-origin:center;animation:heroZoom 14s ease-out forwards}
+    .hero-bg{position:absolute;inset:0;background-image:url('images/hero_bg.jpg');background-size:cover;background-position:right 25% center;background-position:center right 25%;transform-origin:center;animation:heroZoom 14s ease-out forwards}
     @media(min-width:768px){
       .hero-bg{background-position:center 40%}
     }
@@ -259,7 +264,15 @@
       .trust-item:not(:first-child){padding-left:0}
       .about-grid{grid-template-columns:1fr;gap:40px}
       .img-badge{left:0;bottom:0;position:relative;margin-top:16px}
-      .srv-grid{grid-template-columns:1fr}
+      .srv-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+      .srv-card{padding:24px 18px;display:flex;flex-direction:column}
+      .srv-num{font-size:11px;margin-bottom:10px}
+      .srv-name{font-size:17px;line-height:1.25;margin-bottom:8px}
+      .srv-desc{font-size:11.5px;line-height:1.55;margin-bottom:14px}
+      .srv-feats{gap:6px;margin-bottom:12px}
+      .srv-feat{font-size:10.5px;gap:6px}
+      .srv-feat::before{width:10px}
+      .srv-arrow{bottom:14px;right:14px;width:28px;height:28px;font-size:13px}
       .rev-grid{grid-template-columns:1fr}
       .book-grid{grid-template-columns:1fr;gap:40px}
       .form-row{grid-template-columns:1fr}
@@ -273,6 +286,14 @@
       .hero-stats{gap:24px;flex-wrap:wrap}
       .stat-val{font-size:26px}
       .form-wrap{padding:24px}
+      .srv-grid{gap:8px}
+      .srv-card{padding:16px 12px;padding-bottom:18px}
+      .srv-name{font-size:14px;line-height:1.2;margin-bottom:6px}
+      .srv-desc{font-size:10.5px;line-height:1.45;margin-bottom:10px}
+      .srv-feats{gap:4px}
+      .srv-feat{font-size:9.5px;gap:5px}
+      .srv-feat::before{width:8px}
+      .srv-arrow{display:none}
     }
   </style>
 </head>
@@ -312,7 +333,7 @@
 
 <!-- HERO -->
 <section class="hero relative isolate min-h-screen flex flex-col justify-center" id="hero">
-  <div class="hero-bg bg-cover bg-[center_left_30%] md:bg-center"></div>
+  <div class="hero-bg bg-cover bg-[center_right_25%] md:bg-center"></div>
   <div class="hero-ov"></div>
   <div class="hero-ovl"></div>
   <div class="hero-content relative isolate mt-24 md:mt-32">
@@ -425,7 +446,7 @@
       </div>
       <p class="sec-body" style="color:rgba(255,255,255,.45);max-width:340px;font-size:13px">Every treatment delivered with hospital-grade sterilization, rotary precision instruments, and zero-pain anesthesia.</p>
     </div>
-    <div class="srv-grid">
+    <div class="srv-grid grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-[2px]">
       <div class="srv-card">
         <div class="srv-num">01</div>
         <div class="srv-name">Advanced Orthodontics<br>&amp; Braces</div>
